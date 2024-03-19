@@ -14,7 +14,7 @@ body, html {
     height: 100px; /* 适当的高度 */
     background-color: grey; 
     background: transparent;
-    z-index: 2;
+    z-index: 5;
 
     display:flex;
     flex-direction: row;
@@ -31,7 +31,7 @@ body, html {
     height: 100%;
     background-color: grey;
     background: transparent;
-    z-index: 1;
+    z-index: 4;
 }
 p
 {
@@ -46,11 +46,35 @@ p
 
 .DisplayFrame {
     width: 100%;
-    height: 500px;
-    background-color: rgba(0, 0, 0, 0.1); /* 半透明背景 */
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.61); /* 半透明背景 */
     overflow: hidden; /* 隐藏溢出内容 */
+    background-image: url(../image/与风行/bg.png);
+    background-size: cover; /* 背景图片填充容器，可能会被裁剪 */
+    background-repeat: no-repeat;
 }
-
+.DisplayFrame::after {
+    content: ""; /* 必须有内容 */
+    position: absolute;
+    top: 0px; 
+    left: 0px; 
+    right: 0px; 
+    bottom: 0px; 
+    background: linear-gradient(to left,rgba(0, 0, 0, 0.668) 0%,rgba(0, 0, 0, 0.402) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.311) 100%);
+    background: linear-gradient(to top left,rgba(0, 0, 0, 0.775) 0%, rgba(0, 0, 0, 0.63) 20%,rgba(255, 254, 254, 0) 50%,rgba(255, 253, 253, 0) 100%);
+    z-index: 2; /* 位于第一个渐变之上 */
+}
+.DisplayFrame::before {
+    content: ""; /* 必须有内容 */
+    position: absolute;
+    top: 0px; 
+    left: 0px; 
+    right: 0px; 
+    bottom: 0px; 
+    background: linear-gradient(to top right,rgba(0, 0, 0, 0.541) 0%, rgba(0, 0, 0, 0.63) 16%,rgba(255, 254, 254, 0) 40%,rgba(255, 253, 253, 0) 100%);
+    background: linear-gradient(to top,rgba(0, 0, 0, 0.361) 0%,rgba(0, 0, 0, 0.549) 20%,rgba(0, 0, 0, 0)50%,rgba(0, 0, 0, 0) 60%,rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0.693) 100%);
+    z-index: 2; /* 位于第一个渐变之上 */
+}
 .Main {
     width: calc(100% - 200px); /* 页面总宽度减去 LeftNav 的宽度 */
     margin-left: 200px; /*LeftNav 的宽度*/
@@ -78,6 +102,7 @@ p
 .iconfont
 {
     margin-left: 20%;
+    color: rgba(255, 255, 255, 0.6);
 }
 .search{
     width: 200px;
@@ -93,6 +118,7 @@ p
 {
     position: fixed;
     right: 10%;
+    margin-right: 40px;
 }
 .middle,.tools,.con
 {
@@ -113,7 +139,7 @@ p
     flex-direction: row;
     align-items: center;
     justify-content: right;
-    transform: translateX(1000%);
+    transform: translateX(130%);
 }
 .search .con:hover .hidden {
     display: block;
@@ -121,7 +147,7 @@ p
 
 
 .search input[type="text"]:hover + .interact {
-    transform: translateX(100%);
+    transform: translateX(40%);
 }
 .search
 {
@@ -161,11 +187,12 @@ input
 {
     background: transparent;
     border: none;
-    height: 40px;
-    margin-left: 10px;
+    height: 50px;
+    width: -webkit-fill-available;
     caret-color: white;
 }
 input:focus
 {
     outline:none
 }
+
