@@ -1,0 +1,121 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "77828",
+      "name": "收藏",
+      "font_class": "shoucang",
+      "unicode": "f0114",
+      "unicode_decimal": 983316
+    },
+    {
+      "icon_id": "180894",
+      "name": "电视剧",
+      "font_class": "dianshiju",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "975093",
+      "name": "游戏手柄",
+      "font_class": "youxishoubing",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "1776456",
+      "name": "综艺",
+      "font_class": "zongyi",
+      "unicode": "e76f",
+      "unicode_decimal": 59247
+    },
+    {
+      "icon_id": "2087544",
+      "name": "电影",
+      "font_class": "dianying",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "2175018",
+      "name": "少儿",
+      "font_class": "shaoer",
+      "unicode": "e736",
+      "unicode_decimal": 59190
+    },
+    {
+      "icon_id": "4315706",
+      "name": "视频",
+      "font_class": "shipin",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "5387878",
+      "name": "历史记录_o",
+      "font_class": "lishijilu_o",
+      "unicode": "eb7b",
+      "unicode_decimal": 60283
+    },
+    {
+      "icon_id": "6582359",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "6665561",
+      "name": "体育世界",
+      "font_class": "airudiantubiaohuizhi-zhuanqu_tiyushijie",
+      "unicode": "e69a",
+      "unicode_decimal": 59034
+    },
+    {
+      "icon_id": "8530232",
+      "name": "用户",
+      "font_class": "yonghu",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "10242808",
+      "name": "纪录片",
+      "font_class": "dianshiji-",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "11809773",
+      "name": "动漫",
+      "font_class": "dongman",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "32534010",
+      "name": "ph-manager",
+      "font_class": "ph-manager",
+      "unicode": "e6af",
+      "unicode_decimal": 59055
+    },
+    {
+      "icon_id": "33767624",
+      "name": "客户端下载",
+      "font_class": "kehuduanxiazai",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "37176820",
+      "name": "发布视频",
+      "font_class": "fabushipin",
+      "unicode": "eb0b",
+      "unicode_decimal": 60171
+    }
+  ]
+}
