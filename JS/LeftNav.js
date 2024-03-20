@@ -18,6 +18,8 @@ for(let i = 0;i < num;i++)
 
     let text = document.createElement("p");
     text.innerText = innerText[i];
+    text.style.color ="rgba(255, 255, 255, 0.6)";
+    text.className="NavText";
 
     container.appendChild(icon);
     container.appendChild(text);
