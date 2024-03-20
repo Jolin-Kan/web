@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tencent Video</title>
+    <title>腾讯视频-中国领先的在线视频媒体平台,海量高清视频在线观看</title>
     <link rel="stylesheet" href="../CSS/FirstPage.css">
     <link rel="stylesheet" href="../iconfont/iconfont.css">
     <link rel="stylesheet" href="../iconfont/color/iconfont.css">
-    <link rel="stylesheet" href="../CSS/Slider.css">
-    <link rel="stylesheet" href="../CSS/Interact.css">
+    <link rel="stylesheet" href="../CSS/recommendation.css">
+    <link rel="stylesheet" href="../CSS/HoverInteract.css">
+    <link rel="stylesheet" href="../CSS/LoginPage.css">
 </head>
 <body>
     <div id="app">
-        <div class="Header">
+        <div class="Header hide">
             <a href="" class="logo">
                 <svg width="126" height="32" viewBox="0 0 126 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_265_223)"><path d="M6.1225 23.5028C6.801 28.0786 7.61233 31.518 12.9034 29.8054C17.9778 28.1705 22.8601 25.2644 27.1477 21.9701C28.6845 20.6519 31.3638 18.7922 31.4169 16.6075C31.3638 14.4146 28.6845 12.5631 27.1477 11.2429C22.856 7.94851 17.9778 5.04855 12.9034 3.40545C7.61233 1.69695 6.801 5.13848 6.1225 9.71014C5.59523 14.2926 5.59523 18.9204 6.1225 23.5028Z" fill="#0098FF">
                 </path><path d="M1.5054 10.5641C2.0858 7.53743 2.9564 5.34049 6.85775 6.0946C6.52076 7.27918 6.27481 8.48778 6.12203 9.70984C5.59681 14.2924 5.59681 18.9199 6.12203 23.5025C6.27601 24.7244 6.52194 25.9329 6.85775 27.1177C2.95844 27.8718 2.08784 25.6749 1.5054 22.6482L1.46452 22.4316L1.38688 21.9943C0.896432 18.4189 0.896432 14.7934 1.38688 11.2181L1.46452 10.7807L1.5054 10.5641Z" fill="#FF8800"></path><path d="M6.85821 6.09277C7.12798 6.14591 7.41409 6.21131 7.72881 6.29714C12.4619 7.57851 17.0213 9.84493 21.0249 12.4179C22.4554 13.4499 24.9569 14.8969 25.0059 16.6094C24.9569 18.322 22.4534 19.7689 21.0249 20.7989C17.0213 23.3719 12.4619 25.6404 7.72881 26.9197C7.44221 27.0023 7.15165 27.0706 6.85821 27.1241C6.52143 25.9388 6.27548 24.7295 6.1225 23.5068C5.59523 18.9244 5.59523 14.2966 6.1225 9.71414C6.27562 8.49934 6.5195 7.29771 6.85209 6.11934L6.85821 6.09277Z" fill="#43E700">
@@ -22,7 +23,7 @@
             <form class="search" action="">
                 <div class="left-radius"></div>
                 <div class="con">
-                    <input type="text">
+                    <input class="holder" type="text" placeholder="  与风行">
                     </input>
                     <a class="interact" href="" style="text-decoration: none;">
                         <span class="iconfont icon-sousuo"></span>
@@ -49,7 +50,7 @@
                         </div>
                     </div>
                 </span>
-                <span class="iconfont icon-yonghu tool">
+                <span class="iconfont icon-yonghu tool" onclick="OpenLoginPage()">
                     <div class="tool6">
                         <div class="title">登陆之后可以</div>
                         <div class="outpack">
@@ -79,6 +80,7 @@
         </div>
         <div class="LeftNav">
         </div>
+        
         <div class="Display">
             <div class="DisplayFrame"> 
                 <div class="FrameDetail">
@@ -90,7 +92,60 @@
             </div>
             </div>
             <div class="Main">
-                <p>main</p>
+                <div class="bar">
+                    <div class="first">重磅热播</div>
+                    <div class="following" style="border-left: 1px solid white;">全部</div>
+                    <div class="following">电视剧</div>
+                    <div class="following">综艺</div>
+                    <div class="following">电影</div>
+                    <div class="following">动漫</div>
+                    <div class="following">少儿</div>
+                    <div class="following">纪录片</div>
+                    <div class="switch" onclick="togglePage()">换一换</div>
+                </div>
+                <div class="image-container">
+
+                </div>
+
+            </div>
+        </div>
+        <!-- 点击触发登陆界面 -->
+        <div class="login-page">
+            <div class="login-header">
+                <div class="back" style="font-size: 30px;cursor: pointer;"> < </div>
+                <div>QQ账号登陆</div>
+                <div class="exit" style="font-size: 30px; cursor: pointer;" onclick="ExitLoginPage()">X</div>
+            </div>
+            <div class="login-title">登录后高清播放更流畅</div>
+            <div class="login-main">
+                <div class="main-left">
+                    <div class="main-head" style="font-size: 20px;">密码登陆</div>
+                    <div class="main-detail" style="font-size: 10px;">推荐使用<a href="">快捷登录</a>，防止盗号</div>
+                    <input class="inputt" type="text" placeholder=" 支持QQ号/邮箱/手机号登陆"></input>
+                    <input class="inputt" type="text" placeholder=" 请输入密码"></input>
+                    <button class="login-btn" onclick="ExitLoginPage()">登陆</button>
+                    <div class="sub-btn">
+                        <div class="sub1">找回密码</div>
+                        <div class="sub2">注册账号</div>
+                        <div class="sub3">意见反馈</div>
+                    </div>
+                </div>
+                <div class="main-right">
+                    <div class="row">
+                        <!-- 勾 -->
+                        <svg class="tick" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 30 30" onclick="change1()">
+                            <path d="M8.5 15.5l5.5 5.5L23.5 10" fill="none" stroke="white" stroke-width="2"/>
+                          </svg> 
+                        <div class="content">全选<a href="">腾讯视频</a>将获取以下权限</div>
+                    </div>
+                    <div class="row">
+                        <svg class="tick" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 30 30" onclick="change2()">
+                            <path d="M8.5 15.5l5.5 5.5L23.5 10" fill="none" stroke="white" stroke-width="2"/>
+                          </svg> 
+                        <div class="content">使用你的QQ头像、昵称信息</div>
+                    </div>
+                    <div class="term">授权即同意<a href="">服务协议</a>和<a href="">QQ隐私保护指引</a></div>
+                </div>
             </div>
         </div>
     </div>
@@ -98,7 +153,8 @@
     
 
 
-
-
+    <script src="../JS/Header.js"></script>
+    <script src="../JS/recommendation.js"></script>
     <script src="../JS/LeftNav.js"></script>
+    <script src="../JS/LoginPage.js"></script>
 </html>

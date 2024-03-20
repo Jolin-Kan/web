@@ -1,0 +1,132 @@
+#app
+{
+    position: relative;
+}
+a,a:checked,a:visited
+{
+    text-decoration: none;
+    color: rgb(38, 38, 236);
+}
+.login-page
+{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 28%;
+    left: 30%;
+    width: 600px;
+    height: 400px;
+    background-color: white;
+    border: 1px black solid;
+    z-index: 20;
+}
+.login-header
+{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color:rgb(218, 218, 218);
+    width: 100%;
+}
+.back
+{
+    margin-left: 15px;
+    color: grey;
+}
+.exit
+{
+    margin-right: 15px;
+    color: grey;
+}
+.login-title
+{
+    flex: 1;
+    font-size: 26px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.login-main
+{
+    flex: 6;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.main-left
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 250px;
+    margin-right: 50px;
+}
+.sub-btn
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 8px;
+}
+.sub1,.sub2,.sub3
+{
+    padding:0 20px;
+    border-right: 1px solid rgb(234, 234, 234) ;
+    cursor: pointer;
+}
+.sub3
+{
+    border: 0;
+}
+.inputt
+{
+    height: 35px;
+    width: 200px;
+    border: 0.8px rgb(204, 204, 204) solid;
+    caret-color:rgb(204, 204, 204) ;
+}
+.login-btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 200px;
+    background-color: rgb(40, 117, 234);
+    border: none;
+    border-radius: 5px;
+}
+
+.main-right
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 50px;
+    height: 120px;
+    border-left: 0.8px solid rgb(234, 234, 234) ;
+}
+.tick
+{
+    border-radius: 50%;
+    background-color: rgb(170, 170, 170);
+}
+.row
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.term,.content
+{
+    font-size: 12px;
+    margin-left: 3px;
+}
