@@ -91,7 +91,7 @@ a,a:checked,a:visited
     border: 0.8px rgb(204, 204, 204) solid;
     caret-color:rgb(204, 204, 204) ;
 }
-.login-btn
+.qqlogin-btn
 {
     display: flex;
     justify-content: center;
@@ -101,6 +101,7 @@ a,a:checked,a:visited
     background-color: rgb(40, 117, 234);
     border: none;
     border-radius: 5px;
+    color: white;
 }
 
 .main-right

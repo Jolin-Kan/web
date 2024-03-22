@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "iconfont"; /* Project id  */
+  src: url('iconfont.ttf?t=1711027907127') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon_review_star:before {
+  content: "\e651";
+}
+
+.icon-maisuiyou:before {
+  content: "\e6b4";
+}
+
+.icon-maisuizuo:before {
+  content: "\e6b6";
+}
+
+.icon-xingbiao:before {
+  content: "\e694";
+}
+

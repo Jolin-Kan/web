@@ -3,12 +3,16 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    width: calc(100% - 200px);
+    /* width: calc(100% - 200px); */
     background-color: black;
     height:100px;
 }
 .first, .following, .switch {
     color: white;
+}
+.switch
+{
+    margin-left: 500px;
 }
 
 .image-container {

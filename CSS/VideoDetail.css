@@ -1,0 +1,88 @@
+.Header,body
+{
+    background-color: black !important;
+}
+.container
+{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 100px;
+}
+.Major
+{
+    flex: 3;
+    border: 1px solid white;
+    height: 100%;
+}
+.Asider
+{
+    flex: 1;
+    border: 1px solid white;
+    height: 100%;
+}
+
+.player
+{
+    height: 500px;
+    width: 80%;
+    background-color: blue;
+    margin: 5px 0;
+}
+.VideoDisplay
+{
+    display: flex;
+    justify-content: center;
+}
+
+.tab-bar
+{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    background-color: black;
+    padding: 10% 0;
+}
+.switch-container
+{
+    margin: 0 20px;
+    cursor: pointer;
+}
+.head
+{
+    margin-left: 25px;
+    font-size: 30px;
+    color:white;
+}
+.index
+{
+    color: white;
+}
+.switcher
+{
+    color: white;
+}
+
+/* box设置 */
+.box-container
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.typeB
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    height: 130px;
+    background-color: rgb(67, 66, 66);
+    border-radius: 5%;
+}
