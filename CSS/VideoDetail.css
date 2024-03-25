@@ -5,7 +5,7 @@
 .container
 {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: center;
     align-items: flex-start;
     margin-top: 100px;
@@ -13,23 +13,77 @@
 .Major
 {
     flex: 3;
-    border: 1px solid white;
     height: 100%;
+    order: 1;
+    max-width: 1350px;
 }
 .Asider
 {
     flex: 1;
-    border: 1px solid white;
-    height: 100%;
+    order: 2;  
+    overflow: hidden;
+    width: 25%;
+    max-width: 450px;
 }
 
 .player
 {
     height: 500px;
     width: 80%;
-    background-color: blue;
+    background-color: white;
     margin: 5px 0;
 }
+.player {
+    position: relative;
+}
+
+.controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    display: none;
+}
+
+.VideoDisplay:hover .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.speed-menu,
+.quality-menu {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 5px); /* 距离按钮 5px */
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    box-sizing: border-box;
+}
+.speed-menu
+{
+    left:40%;
+}
+.quality-menu
+{
+    left:55%;
+}
+
+.speed:hover .speed-menu,
+.quality:hover .quality-menu {
+    display: block;
+}
+
+.controls button,
+.speed-menu button,
+.quality-menu button {
+    margin-right: 5px;
+}
+
 .VideoDisplay
 {
     display: flex;
@@ -79,10 +133,242 @@
 {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     justify-content: space-between;
     width: 200px;
-    height: 130px;
+    height: 120px;
+    padding: 5px;
     background-color: rgb(67, 66, 66);
     border-radius: 5%;
+    font-size: 14px;
+    color: white;
 }
+.bar1
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.userinfo
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 10px;
+}
+.iconfont
+{
+    color: white;
+}
+.icon-icon_review_star
+{
+    color: orange;
+}
+.userpic
+{
+    height: 20px;
+    width: 20px;
+}
+.watchinfo
+{
+    font-size: 10px;
+    color: #666464;
+}
+
+/* typeA setting */
+.typeA
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(67, 66, 66);
+    height: 120px;
+    padding: 5px;
+    border-radius: 5%;
+
+}
+.leftpart,.middlepart,.rightpart
+{
+    color: white;
+    font-size: 12px;
+}
+.leftpart
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 130px;
+    margin-right: 20px;
+}
+.middlepart
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50px;
+    height: 90px;
+}
+.level
+{
+    margin: 3px 0;
+    font-size: 11px;
+}
+
+.rightpart
+{
+    width: 80px;
+    margin: 0 10px
+}
+.pointcontainer
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.point
+{
+    color: orange;
+    font-size: 25px;
+    padding: 0 5px;
+}
+.icon-maisuiyou
+{
+    margin: 0;
+}
+/* 评分进度条 */
+.progress-bar {
+    width: 100%;
+    background-color: #f5f5f5; /* 进度条背景颜色 */
+    height: 8px; /* 进度条高度 */
+    border-radius: 5px; /* 进度条圆角 */
+    margin-bottom: 9px; /* 进度条底部边距 */
+  }
+  
+.progress {
+    background-color: #727272; /* 进度条填充颜色 */
+    height: 100%; /* 进度条高度 */
+    border-radius: 5px; /* 进度条圆角 */
+}
+
+.ActorContainer
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 130px;
+    margin-bottom: 30px;
+}
+.actorpic
+{
+    width: 80px;
+    height: 80px;
+}
+
+/* Asider */
+
+/* 整体 大容器 背景样式 */
+.DetailInfoContainer
+{
+    background-color: #666464;
+    border: #666464 1px solid;
+    border-radius: 2%;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 30px;
+}
+.intro
+{
+    height: 700px; /*暂时*/
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    padding: 10px;
+    color: rgb(179, 175, 175);
+}
+.row1
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+.HeadText
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* height: 60px; */
+    order:1;
+    position: relative;
+}
+.TextContainer
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height:120px;
+    margin-left: 8px;
+}
+.slider
+{
+    width: 430px;
+    max-width: 450px;
+    background-color: #666464;
+    position: absolute;
+    top: -55%;
+    left: -32%;
+    transform: translateX(460px);
+    transition: transform 0.5s ease-in;
+    padding: 10px;
+}
+.sliderpic
+{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.actorlist
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+.contain 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 13px;
+    height: 100px;
+}
+.headtitle
+{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.maintext
+{
+    max-width: 320px;
+}
+.name
+{
+    font-size: 30px;
+}
+.showrule,.actorinfo,.Epinfo
+{
+    font-size: 13px;
+}
+.showbtn,.headtitle
+{
+    cursor: pointer;
+}
+

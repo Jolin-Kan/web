@@ -3,7 +3,7 @@ let BoxbData = [
     ,situation:"累计观看少于1小时"},
     {UserName:"无敌又俊朗",opinion:"全员演技都特别好，流畅自然，全是实力派。剧情进展迅速不拖沓，难得的好剧。"
     ,situation:"累计观看超过3小时"},
-    {UserName:"David",opinion:"节奏很快，有冲突有矛盾但很搞笑的一部轻松生活剧，每天看的哈哈笑。陈晓演技更好了，自然流畅的表达，又帅又会演，"
+    {UserName:"David",opinion:"节奏很快，有冲突有矛盾但很搞笑的一部轻松生活剧。陈晓演技更好了又帅又会演，"
     ,situation:"累计观看超过2小时"},
     {UserName:"栗子吖",opinion:"剧情贴近生活，节奏快，有笑点有泪点，陈晓演技很好"
     ,situation:"累计观看少于1小时"},
@@ -20,22 +20,34 @@ let viewernum = 34.7;
 let levels = ["强烈推荐", "力荐", "推荐", "一般推荐", "不推荐"];
 let progressPercentages = [62.86753, 13.72755, 14.817362, 5.551223, 3.036338];
 
+//计算boxindex
+const calculateBoxIndexmin = (currentPage) => currentPage * 3 - 4;
+const calculateBoxIndexmax = (currentpage) => currentpage * 3 - 2;
 
-var index1 = document.getElementById("index1");
-// 设置动态值
+
+//窗口准备就绪时加载box
+window.onload = function() {
+    regenerate(boxindex, currentpage);
+    UpdatePic();
+};
+
+let index1 = document.getElementById("index1");
 let currentpage = 1;
-index1.textContent = currentpage;
+index1.innerText = currentpage;
 
 const BoxContainer = document.getElementsByClassName('box-container')[0];
-let boxindex = 0;
+var boxindex = 0;
 
-let prevbtn = document.getElementById("switcherLeft");
-let nextbtn = document.getElementById("switcherRight");
+let prevbtn = document.getElementsByClassName("switcherLeft")[0];
+let nextbtn = document.getElementsByClassName("switcherRight")[0];
 
-prevbtn.addEventListener("click", previous());
+prevbtn.addEventListener('click', function() {
+    previous();
+});
 
-nextbtn.addEventListener("click", next());
-
+nextbtn.addEventListener('click', function() {
+    next();
+});
 
 function previous() {
     if(currentpage == 1)
@@ -52,7 +64,6 @@ function previous() {
     }
     
 }
-
 function next() {
     if(currentpage == 3){
         return 0;
@@ -70,8 +81,8 @@ function next() {
 //遍历 创建box，根据boxindex的变化更改Value
 function generateTypeB(boxindex) {
     // 创建 typeB div
-    var typeB = document.createElement("div");
-    typeB.classList.add("typeB");
+    let typeBElement = document.createElement("div");
+    typeBElement.classList.add("typeB");
 
     // 创建 bar1 div
     var bar1 = document.createElement("div");
@@ -82,14 +93,14 @@ function generateTypeB(boxindex) {
     userInfo.classList.add("user-info");
 
     // 创建 userpic div
-    var userPic = document.createElement("div");
+    var userPic = document.createElement("img");
     userPic.classList.add("userpic");
     userPic.setAttribute('src','../image/user.png');
 
     // 创建 username div
     var username = document.createElement("div");
     username.classList.add("username");
-    username.innerText=`BoxbDta[${BoxbData}].username`;
+    username.innerText = BoxbData[boxindex].UserName;
 
     // 将 userpic 和 username 添加到 user-info div 中
     userInfo.appendChild(userPic);
@@ -101,16 +112,16 @@ function generateTypeB(boxindex) {
 
     // 创建 star span
     var star = document.createElement("span");
-    star.addClasslist("star");
-    star.addClasslist('iconfont','icon-icon_review_star');
-
+    star.classList.add("star");
+    star.classList.add('iconfont','icon-icon_review_star');
+    star.setAttribute('style','font-size: 18px;');
 
     // 创建 ratelevel div
     var rateLevel = document.createElement("div");
     rateLevel.classList.add("ratelevel");
 
-    // 将 span 和 ratelevel 添加到 userrate div 中
-    userRate.appendChild(spanElement);
+    // 将 star 和 ratelevel 添加到 userrate div 中
+    userRate.appendChild(star);
     userRate.appendChild(rateLevel);
 
     // 将 user-info 和 userrate 添加到 bar1 div 中
@@ -120,21 +131,22 @@ function generateTypeB(boxindex) {
     // 创建 maincontent div
     var mainContent = document.createElement("div");
     mainContent.classList.add("maincontent");
-    mainContent.innerText = `BoxbData[${boxinddex}].opinion`;
+    mainContent.innerText = BoxbData[boxindex].opinion;
 
     // 创建 watchinfo div
     var watchInfo = document.createElement("div");
     watchInfo.classList.add("watchinfo");
-    watchInfo.innerText = `BoxbData[${boxindex}].situation`;
+    watchInfo.innerText = BoxbData[boxindex].situation;
 
     // 将 bar1、maincontent 和 watchinfo 添加到 typeB div 中
-    typeB.appendChild(bar1);
-    typeB.appendChild(mainContent);
-    typeB.appendChild(watchInfo);
+    typeBElement.appendChild(bar1);
+    typeBElement.appendChild(mainContent);
+    typeBElement.appendChild(watchInfo);
 
     //整体添加到 box-container
-    BoxContainer.appendChild(typeB);
+    BoxContainer.appendChild(typeBElement);
 }
+
 
 function generateTypeA(rate, viewernum, levels, progressPercentages) 
 {
@@ -215,28 +227,131 @@ function generateTypeA(rate, viewernum, levels, progressPercentages)
     BoxContainer.appendChild(typeAElement);
 }
 
-//计算boxindex
-const calculateBoxIndexmin = (currentPage) => currentPage * 3 - 4;
-const calculateBoxIndexmax = (currentpage) => currentpage * 3 - 2;
-
-function regenerate()
-{
-    if(currentpage = 1)
-    {
+function regenerate() {
+    if (currentpage === 1) {
         generateTypeA(rate, viewernum, levels, progressPercentages);
-        generateTypeB(0);
-        generateTypeB(1);
-    }
-    else if(currentpage > 1 && currentpage < 4)
-    {
+        generateTypeB(boxindex);
+        generateTypeB(boxindex + 1);
+        index1.innerText = currentpage;
+    } else if (currentpage > 1 && currentpage < 4) {
         let min = calculateBoxIndexmin(currentpage);
         let max = calculateBoxIndexmax(currentpage);
-        for(let i = min;i <= max ; i++)
-        {
+        for (let i = min; i <= max; i++) {
             generateTypeB(i);
+        }
+        index1.innerText = currentpage;
+    } else {
+        return 0;
+    }
+}
+
+let index2 = document.getElementById("index2");
+let actorpage = 1;
+index2.innerText = actorpage;
+
+let controllerLeft = document.getElementsByClassName("controllerLeft")[0];
+let controllerRight = document.getElementsByClassName("controllerRight")[0];
+
+controllerLeft.addEventListener('click',function(){
+    prevpic();
+})
+
+controllerRight.addEventListener('click',function(){
+    nextpic();
+});
+
+
+let actorpic = [
+    "../image/actor/1.png", "../image/actor/2.png", "../image/actor/3.png",
+    "../image/actor/4.png", "../image/actor/5.png", "../image/actor/6.png",
+    "../image/actor/7.png"
+];
+let ActorContainer = document.getElementsByClassName('ActorContainer')[0];
+
+function CreatePic(index)
+{
+    let pic = document.createElement('img');
+    pic.classList.add('actorpic');
+    pic.setAttribute('src',actorpic[index]);
+
+    ActorContainer.appendChild(pic);
+}
+
+function UpdatePic()
+{
+    if(actorpage === 1)
+    {
+        for(let i = 0;i < 4;i++)
+        {
+            CreatePic(i);
+        }
+    }
+    else if(actorpage === 2)
+    {
+        for(let i = 4;i < 7;i++)
+        {
+            CreatePic(i);
         }
     }
     else{
         return 0;
     }
 }
+function nextpic()
+{
+    
+    if(actorpage > 1)
+    {
+        return 0;
+    }
+    if(actorpage === 1)
+    {
+        while (ActorContainer.firstChild) 
+        {
+            ActorContainer.removeChild(ActorContainer.firstChild);
+        };
+        actorpage++;
+        index2.innerText = actorpage;
+        UpdatePic();
+    }
+}
+function prevpic()
+{
+    if(actorpage < 1)
+    {
+        return 0;
+    }
+    if(actorpage === 2)
+    {
+        while (ActorContainer.firstChild) 
+        {
+            ActorContainer.removeChild(ActorContainer.firstChild);
+        };
+        actorpage--;
+        index2.innerText = actorpage;
+        UpdatePic();
+    }
+}
+
+//show detail
+let show = document.getElementById('showrule');
+let rules = document.getElementsByClassName('slider')[0];
+let closeBtn = document.getElementsByClassName('headtitle')[0];
+let showbtn = document.getElementsByClassName('showbtn')[0]; 
+
+show.addEventListener('click', function (event) {
+    event.stopPropagation();
+    rules.style.transform = 'translateX(-27px)';
+});
+
+closeBtn.addEventListener('click', function (event) {
+    event.stopPropagation();
+    rules.style.transform = 'translateX(460px)';
+    console.log(1);
+});
+
+showbtn.addEventListener('click', function (event) {
+    event.stopPropagation();
+});
+
+

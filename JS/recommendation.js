@@ -41,6 +41,12 @@ function updatePage() {
             videoElement.setAttribute('loop', true);
             videoElement.setAttribute('muted', true); // 自动播放需要静音
 
+            //链接跳转至视频详情页
+            const a = document.createElement('a');
+            a.setAttribute('href', './VideoDetail.html');
+            a.setAttribute('style', 'position: absolute;top: 0;left: 0;width: 300px;height: 100px;z-index: 10;');
+
+
             // 创建标题和详情元素
             const titleElement = document.createElement('div');
             titleElement.classList.add('title');
@@ -53,6 +59,7 @@ function updatePage() {
             // 创建描述元素，并添加标题和详情元素
             const descriptionElement = document.createElement('div');
             descriptionElement.classList.add('description');
+            descriptionElement.setAttribute('style',' position: relative;');
             descriptionElement.appendChild(titleElement);
             descriptionElement.appendChild(detailElement);
 
@@ -60,6 +67,7 @@ function updatePage() {
             const wrapper = document.createElement('div');
             wrapper.classList.add('image-wrapper');
             wrapper.appendChild(videoElement);
+            descriptionElement.appendChild(a);
             wrapper.appendChild(descriptionElement);
             
             // 将容器添加到图片容器中
@@ -70,6 +78,11 @@ function updatePage() {
             imageElement.classList.add('image');
             imageElement.src = item.src;
 
+            //链接跳转至视频详情页
+            const a = document.createElement('a');
+            a.setAttribute('href', './VideoDetail.html');
+            a.setAttribute('style', 'position: absolute;top: 0;left: 0;width: 300px;height: 100px;z-index: 10;');
+
             // 创建标题和详情元素
             const titleElement = document.createElement('div');
             titleElement.classList.add('title');
@@ -82,6 +95,7 @@ function updatePage() {
             // 创建描述元素，并添加标题和详情元素
             const descriptionElement = document.createElement('div');
             descriptionElement.classList.add('description');
+            descriptionElement.setAttribute('style',' position: relative;');
             descriptionElement.appendChild(titleElement);
             descriptionElement.appendChild(detailElement);
 
@@ -89,6 +103,7 @@ function updatePage() {
             const wrapper = document.createElement('div');
             wrapper.classList.add('image-wrapper');
             wrapper.appendChild(imageElement);
+            descriptionElement.appendChild(a);
             wrapper.appendChild(descriptionElement);
             
             // 将容器添加到图片容器中

@@ -13,6 +13,7 @@
 .switch
 {
     margin-left: 500px;
+    cursor: pointer;
 }
 
 .image-container {
