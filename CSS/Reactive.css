@@ -1,0 +1,14 @@
+@media screen and (max-width: 1380) {
+    .postercontaine
+    {
+        margin-left: 18%;
+    }
+}
+
+@media screen and (min-width: 1400) {
+    .switch
+    {
+        margin-left: 560px;
+    }
+}
+    

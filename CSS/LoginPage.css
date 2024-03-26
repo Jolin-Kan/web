@@ -19,7 +19,7 @@ a,a:checked,a:visited
     height: 400px;
     background-color: white;
     border: 1px black solid;
-    z-index: 20;
+    z-index: 30;
 }
 .login-header
 {

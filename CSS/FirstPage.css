@@ -14,11 +14,12 @@ body, html {
     width: 100%;
     height: 100px; /* 适当的高度 */
     background-color: black; 
-    z-index: 5;
+    z-index: 25;
     display:flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    max-width: 1800px;
 }
 .hide 
 {
@@ -35,7 +36,7 @@ body, html {
     background-color: black;
     background: transparent;
     z-index: 4;
-}
+    max-width: 1800px;}
 .NavText
 {
     margin-left: 10px;
@@ -49,7 +50,7 @@ body, html {
 
 .Display {
     position: relative;
-    /* margin-left: 200px; LeftNav 的宽度 */
+    max-width: 1800px;    /* margin-left: 200px; LeftNav 的宽度 */
     /* padding-top: 100px; Header 的高度 */
 }
 
@@ -58,7 +59,6 @@ body, html {
     height: 700px;
     background-color: black;
     overflow: hidden; /* 隐藏溢出内容 */
-    background-image: url(../image/与风行/bg.png);
     background-size: cover; /* 背景图片填充容器，可能会被裁剪 */
     background-repeat: no-repeat;
 }
@@ -86,6 +86,7 @@ body, html {
 }
 .Main {
     width: calc(100% - 200px); /* 页面总宽度减去 LeftNav 的宽度 */
+    max-width: 1600px;
     margin-left: 200px; /*LeftNav 的宽度*/
     height: 100%;
     background-color: black; 
@@ -96,7 +97,6 @@ body, html {
     margin-left: 200px; /*LeftNav 的宽度*/
     background: transparent;
     height: 350px;
-    border: 1px solid black; /* 边框 */
     z-index: 1;position: absolute; /* 设置为绝对定位 */
     bottom: 0; /* 底部与父元素底部重合 */
 
@@ -214,5 +214,3 @@ input:focus
     color:rgb(152, 152, 152) ;
     font-size: 16px;
 }
-
-
