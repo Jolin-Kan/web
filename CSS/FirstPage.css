@@ -53,6 +53,25 @@ body, html {
     max-width: 1800px;    /* margin-left: 200px; LeftNav 的宽度 */
     /* padding-top: 100px; Header 的高度 */
 }
+.DisplayFrame {
+    position: relative; /* 设置为相对定位 */
+    width: 100%;
+    height: 700px;
+    background-color: black;
+    overflow: hidden; /* 隐藏溢出内容 */
+    background-size: cover; /* 背景图片填充容器，可能会被裁剪 */
+    background-repeat: no-repeat;
+}
+
+.DisplayFrame video {
+    position: absolute; /* 设置为绝对定位 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+    object-fit: cover;
+}
 
 .DisplayFrame {
     width: 100%;

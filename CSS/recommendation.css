@@ -1,4 +1,4 @@
-.bar {
+.bar,.adjustcontainer {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -6,6 +6,10 @@
     /* width: calc(100% - 200px); */
     background-color: black;
     height:100px;
+    max-width: 1440px;
+}
+.bar {
+    justify-content: space-between;
 }
 .first, .following, .switch {
     color: white;
@@ -51,7 +55,7 @@
 .description {
     text-align: left;
     padding-top: 10px;
-    width: 100%; 
+    width: 90%; 
     height: 30px; 
     padding: 0 10px; 
     background-color: black; 
@@ -84,4 +88,5 @@
 .switch{
     font-size: 12px;
     white-space: nowrap;
+    margin-right: 5px;
 }

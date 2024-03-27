@@ -19,7 +19,7 @@ img
 .fronts
 {
     width: 300px;
-    height: 100%;
+    height: 200px;
     margin-left: 20px;
     filter: brightness(120%);}
 .post
@@ -44,4 +44,8 @@ img
     color: white;
     font-size: 30px;
     cursor: pointer;
+}
+.nextbtn
+{
+    margin-right: 30%;
 }

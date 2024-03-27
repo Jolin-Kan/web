@@ -120,9 +120,12 @@ function togglePage() {
     updatePage();
 }
 
+let recovideo = document.getElementsByTagName('video')[0];
 // 等待窗口加载完成后执行
 window.onload = function() {
     updatePage();
+    // recovideo.play();
 };
+
 
 

@@ -5,10 +5,10 @@
     }
 }
 
-@media screen and (min-width: 1400) {
+@media screen and (max-width: 1300){
     .switch
     {
-        margin-left: 560px;
+        margin-right: 500px;
     }
 }
     
