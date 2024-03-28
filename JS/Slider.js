@@ -82,7 +82,8 @@ document.addEventListener("DOMContentLoaded", function(){
     bg.style.background = "url('" + BgData[0] + "') no-repeat center center / cover";
     let posters = document.getElementsByClassName('posters');
     posters[0].style.filter = "brightness(100%)";
-    prevbtn.style.display = "none";
+    // prevbtn.style.display = "transparent";
+    prevbtn.style.opacity = "0";
     addPosterMouseEnterListeners();
 });
 
@@ -117,8 +118,8 @@ function next() {
         let posters = document.getElementsByClassName('posters');
         bg.style.background = "url(../image/5/bg.png) no-repeat center center / cover";
         posters[0].style.filter = "brightness(100%)";
-        prevbtn.style.display = "block";
-        nextbtn.style.display = "none";
+        prevbtn.style.opacity = "1";
+        nextbtn.style.opacity = "0";
         addPosterMouseEnterListeners();
 
         // 更新 posterIndex 和显示元素
@@ -155,8 +156,8 @@ function prev() {
         let posters = document.getElementsByClassName('posters');
         bg.style.background = "url(../image/1/bg.png) no-repeat center center / cover";
         posters[0].style.filter = "brightness(100%)";
-        prevbtn.style.display = "none";
-        nextbtn.style.display = "block";
+        prevbtn.style.opacity = "0";
+        nextbtn.style.opacity = "1";
         addPosterMouseEnterListeners();
 
         // 更新 posterIndex 和显示元素
