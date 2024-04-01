@@ -91,9 +91,6 @@ function updatePage() {
             descriptionElement.appendChild(a);
             wrapper.appendChild(descriptionElement);
 
-            
-            
-            
             // 将容器添加到图片容器中
             container.appendChild(wrapper);
         } else {
@@ -105,12 +102,31 @@ function updatePage() {
             //链接跳转至视频详情页
             const a = document.createElement('a');
             a.setAttribute('href', './VideoDetail.html');
-            a.setAttribute('style', 'position: absolute;top: 0;left: 0;width: 300px;height: 100px;z-index: 10;');
+            a.setAttribute('style', 'position: absolute;top: 0;left: 0;width: 380px;height: 100px;z-index: 10;');
 
             // 创建标题和详情元素
             const titleElement = document.createElement('div');
             titleElement.classList.add('title');
             titleElement.textContent = item.title;
+
+            //
+            const addplus = document.createElement('div');
+            addplus.classList.add('addplus');
+
+            //追剧按钮
+            const addcontainer = document.createElement('div');
+            addcontainer.classList.add('addcontainer');
+            const icon = document.createElement('span');
+            icon.classList.add('iconfont');
+            icon.classList.add('icon-tianjialiebiao');
+            const word = document.createElement('div');
+            word.classList.add('word');
+            word.innerText = '追';
+            addcontainer.appendChild(icon);
+            addcontainer.appendChild(word);
+
+            addplus.appendChild(titleElement);
+            addplus.appendChild(addcontainer);
 
             const detailElement = document.createElement('div');
             detailElement.classList.add('detail');
@@ -120,7 +136,7 @@ function updatePage() {
             const descriptionElement = document.createElement('div');
             descriptionElement.classList.add('description');
             descriptionElement.setAttribute('style',' position: relative;');
-            descriptionElement.appendChild(titleElement);
+            descriptionElement.appendChild(addplus);
             descriptionElement.appendChild(detailElement);
 
             // 创建图片和描述的容器
@@ -135,6 +151,7 @@ function updatePage() {
         }
     }
 }
+
 
 
 

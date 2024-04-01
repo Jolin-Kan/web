@@ -355,3 +355,50 @@ showbtn.addEventListener('click', function (event) {
 });
 
 
+const squares = document.querySelectorAll('.square');
+
+squares.forEach(square => {
+  square.addEventListener('mouseenter', () => {
+    const summary = square.getAttribute('data-summary');
+    const summaryElement = document.createElement('div');
+    summaryElement.classList.add('summary');
+    summaryElement.textContent = summary;
+    square.appendChild(summaryElement);
+    summaryElement.style.display = 'block';
+  });
+
+  square.addEventListener('mouseleave', () => {
+    const summaryElement = square.querySelector('.summary');
+    if (summaryElement) {
+      square.removeChild(summaryElement);
+    }
+  });
+});
+
+//player
+let mute = document.getElementsByClassName('mute')[0];
+
+mute.addEventListener('click', function () {
+    if(mute.classList.contains('icon-shengyinjingyin')) {
+        mute.classList.remove('icon-shengyinjingyin');
+        mute.classList.add('icon-shengyin');
+    } else if (mute.classList.contains('icon-shengyin')) {
+        mute.classList.remove('icon-shengyin');
+        mute.classList.add('icon-shengyinjingyin');
+    }
+});
+
+let danmu = document.getElementsByClassName('danmu')[0];
+
+danmu.addEventListener('click', function () {
+    if(danmu.classList.contains('icon-icon_danmukaiguan_guan'))
+    {
+        danmu.classList.remove('icon-icon_danmukaiguan_guan');
+        danmu.classList.add('icon-icon_danmukaiguan_kai');
+    }
+    else if (danmu.classList.contains('icon-icon_danmukaiguan_kai'))
+    {
+        danmu.classList.remove('icon-icon_danmukaiguan_kai');
+        danmu.classList.add('icon-icon_danmukaiguan_guan');
+    }
+});

@@ -150,7 +150,7 @@ body, html {
     justify-content: center;
     position: fixed;
     right: 10%;
-    margin-right: 80px;
+    /* margin-right: 80px; */
 }
 .middle,.tools,.con
 {

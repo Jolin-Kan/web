@@ -5,10 +5,10 @@
     }
 }
 
-@media screen and (max-width: 1300){
-    .switch
+@media screen and (max-width: 1322px){
+    .FrameDetail
     {
-        margin-right: 500px;
+        width: calc(100% - 300px) !important;
     }
 }
     
