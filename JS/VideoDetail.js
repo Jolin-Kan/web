@@ -347,12 +347,23 @@ show.addEventListener('click', function (event) {
 closeBtn.addEventListener('click', function (event) {
     event.stopPropagation();
     rules.style.transform = 'translateX(460px)';
+    setTimeout(function() {
+        squares.forEach(square => {
+            square.style.opacity = '1';
+        });
+    }, 50);
     console.log(1);
 });
 
-showbtn.addEventListener('click', function (event) {
+showbtn.addEventListener('click', function(event) {
     event.stopPropagation();
+    setTimeout(function() {
+        squares.forEach(square => {
+            square.style.opacity = '0';
+        });
+    }, 450);
 });
+
 
 
 const squares = document.querySelectorAll('.square');

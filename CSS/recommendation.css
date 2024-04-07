@@ -34,7 +34,8 @@
 .image-wrapper {
     padding-bottom:100px;
     flex-basis: calc((100% - 40px) / 3); /* 设置每个图片容器的宽度为页面宽度的1/3 */
-    width:380px;
+    width:100%;
+    max-width: 450px;
     height: 230px;
 }
 /* .image-wrapper:hover 
@@ -63,7 +64,8 @@
 .description {
     text-align: left;
     padding-top: 10px;
-    width:380px;
+    width:100%;
+    max-width: 450px;
     height: 30px; 
     padding: 0 10px; 
     background-color: black; 
@@ -98,7 +100,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;  
-    width:380px;
+    width:100%;
+    max-width: 450px;
 }
 .detail
 {
@@ -106,7 +109,7 @@
 }
 .recommendationlink
 {
-    width:100%;
+    width: 450px;
 }
 
 .first

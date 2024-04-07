@@ -43,9 +43,10 @@ function updatePage() {
 
             //链接跳转至视频详情页
             const a = document.createElement('a');
+            a.classList.add('shadow');
             a.classList.add('recommendationlink');
             a.setAttribute('href', './VideoDetail.html');
-            a.setAttribute('style', 'position: absolute;top: 0;left: 0;width: 380px;height: 100px;z-index: 10;');
+            a.setAttribute('style', 'position: absolute;top: 0;left: 0;height: 100px;z-index: 10;');
 
 
             // 创建标题和详情元素
@@ -101,8 +102,10 @@ function updatePage() {
 
             //链接跳转至视频详情页
             const a = document.createElement('a');
+            a.classList.add('shadow');
+            a.classList.add('recommendationlink');
             a.setAttribute('href', './VideoDetail.html');
-            a.setAttribute('style', 'position: absolute;top: 0;left: 0;width: 380px;height: 100px;z-index: 10;');
+            a.setAttribute('style', 'position: absolute;top: 0;left: 0;height: 100px;z-index: 10;');
 
             // 创建标题和详情元素
             const titleElement = document.createElement('div');
@@ -169,4 +172,23 @@ window.onload = function() {
 };
 
 
+
+
+
+// // 获取 A 元素
+// const aElement = document.querySelectorAll('.image-wrapper');
+// // 获取 B 元素
+// const bElement = document.querySelectorAll('.recommendationlink');
+
+// // 当 A 元素宽度发生变化时，设置 B 元素的宽度
+// function setBWidth() {
+//     const aWidth = aElement.offsetWidth; // 获取 A 元素的宽度
+//     bElement.style.width = aWidth + 'px'; // 设置 B 元素的宽度为 A 元素的宽度
+// }
+
+// // 页面加载时初始化 B 元素的宽度
+// setBWidth();
+
+// // 监听窗口大小变化事件，以便在 A 元素宽度变化时重新设置 B 元素的宽度
+// window.addEventListener('resize', setBWidth);
 

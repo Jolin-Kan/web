@@ -1,6 +1,15 @@
 let page = document.getElementsByClassName('login-page')[0];
 let iconYonghu = document.querySelector('.icon-yonghu');
 
+function disableScroll() {
+    document.body.style.overflow = 'hidden';
+}
+
+// JavaScript函数以启用滚动
+function enableScroll() {
+    document.body.style.overflow = '';
+}
+
 function OpenLoginPage(event) {
     // 获取点击事件的目标元素
     var target = event.target;
@@ -8,6 +17,7 @@ function OpenLoginPage(event) {
     // 检查点击事件的目标元素是否是 .icon-yonghu 元素本身
     if (target === iconYonghu) {
         page.style.display = "flex";
+        disableScroll();
     }
 }
 
@@ -16,6 +26,7 @@ document.addEventListener('click', OpenLoginPage);
 
 function ExitLoginPage(){
     page.style.display="none";
+    enableScroll();
 }
 
 let tick1 = document.getElementsByClassName('tick')[0];

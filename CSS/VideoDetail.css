@@ -444,6 +444,7 @@
     position: relative;
     height: 30px;
     width: 30px;
+    opacity: 1;
   }
 
   .square:hover {

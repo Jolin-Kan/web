@@ -11,4 +11,19 @@
         width: calc(100% - 300px) !important;
     }
 }
-    
+
+@media screen and (min-width: 1900px){
+    .Display,.Main
+    {
+        margin:0 auto;
+    }
+    .search
+    {
+        margin-left:23%;
+
+    }
+    .Header
+    {
+        max-width: 2300px;
+    }
+}

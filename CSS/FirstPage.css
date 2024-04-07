@@ -18,7 +18,7 @@ body, html {
     display:flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     max-width: 1800px;
 }
 .hide 
@@ -142,15 +142,15 @@ body, html {
 }
 .logo
 {
-    position: fixed;
-    left: 1%;
+    
+    margin-left:12px;
 }
 .tools
 {
     justify-content: center;
-    position: fixed;
-    right: 10%;
-    /* margin-right: 80px; */
+    /* position: fixed;
+    right: 10%; */
+    margin-right: 80px;
 }
 .middle,.tools,.con
 {
