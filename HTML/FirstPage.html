@@ -24,7 +24,7 @@
                 </clipPath></defs></svg>
             </a>
             <form class="search" action="">
-                <div class="left-radius"></div>
+                <!-- <div class="left-radius"></div> -->
                 <div class="con">
                     <input class="holder" type="text" placeholder="  与风行">
                     </input>
@@ -33,7 +33,7 @@
                         <div class="hidden" style="color: white;">全网搜</div>
                     </a>
                 </div>
-                <div class="right-radius"></div>
+                <!-- <div class="right-radius"></div> -->
             </form>
                 
             <div class="tools">
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                 </span>
-                <span class="iconfont icon-yonghu tool" onclick="OpenLoginPage()">
+                <span class="iconfont icon-yonghu tool usertag hovertag">
                     <div class="tool6">
                         <div class="title">登陆之后可以</div>
                         <div class="outpack">
@@ -133,9 +133,9 @@
                 <div class="main-left">
                     <div class="main-head" style="font-size: 20px;">密码登陆</div>
                     <div class="main-detail" style="font-size: 10px;">推荐使用<a href="">快捷登录</a>，防止盗号</div>
-                    <input class="inputt" type="text" placeholder=" 支持QQ号/邮箱/手机号登陆"></input>
-                    <input class="inputt" type="text" placeholder=" 请输入密码"></input>
-                    <button class="qqlogin-btn" onclick="ExitLoginPage()">登陆</button>
+                    <input class="inputt" id="username" type="text" placeholder=" 支持QQ号/邮箱/手机号登陆"></input>
+                    <input class="inputt" id="password" type="text" placeholder=" 请输入密码"></input>
+                    <button class="qqlogin-btn">登陆</button>
                     <div class="sub-btn">
                         <div class="sub1">找回密码</div>
                         <div class="sub2">注册账号</div>
@@ -162,8 +162,8 @@
         </div>
     </div>
 
-    
-
+    </body>
+    <script src="../JS/HeaderChange.js"></script>
     <script src="../JS/Slider.js"></script>
     <script src="../JS/Header.js"></script>
     <script src="../JS/recommendation.js"></script>

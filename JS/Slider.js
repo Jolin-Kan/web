@@ -1,25 +1,50 @@
-//DataBase
-//DataBase
-let PosterData = [
-    '../image/1/post.png','../image/2/post.png','../image/3/post.png',
-    '../image/4/post.png','../image/5/post.png','../image/6/post.png',
-    '../image/7/post.png','../image/8/post.png'
-];
-let BgData = [
-    '../image/1/bg.png',"../image/2/bg.png","../image/3/bg.png",
-    "../image/4/bg.png","../image/5/bg.png","../image/6/bg.png",
-    "../image/7/bg.png","../image/8/bg.png"
-];
-let FrontData = [
-    '../image/1/front.png','../image/2/front.png','../image/3/front.png',
-    '../image/4/front.png','../image/5/front.png','../image/6/front.png',
-    '../image/7/front.png','../image/8/front.png'
-]
-let Mp4Data = [
-    '../image/1/video.mp4','../image/2/video.mp4','../image/3/video.mp4',
-    '../image/4/video.mp4','../image/5/video.mp4','../image/6/video.mp4',
-    '../image/7/video.mp4','../image/8/video.mp4'
-]
+//临时数据库
+let imgData = [];
+let vidData = [];
+// 获取数据
+function fetchPosterData(id) {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                const responseData = JSON.parse(xhr.responseText);
+                imgData[id-10] = responseData.data.cover;
+                console.log(imgData[id-10]);
+                // 继续下一个ID的请求
+                const nextId = id + 1;
+                if (nextId <= 26) {
+                    fetchPosterData(nextId);
+                }
+            } else {
+                console.error(`Failed to fetch poster data for ID ${id}`);
+            }
+        }
+    };
+    xhr.open('GET', `https://blog.zifeiyu.love/video/query?id=${id}`);
+    xhr.send();
+}
+// 获取视频数据
+function fetchVideoData(id) {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                const responseData = JSON.parse(xhr.responseText);
+                vidData.push(responseData.data[0].url);
+                // 继续下一个ID的请求
+                const nextId = id + 1;
+                if (nextId <= 26) {
+                    fetchVideoData(nextId);
+                }
+            } else {
+                console.error(`Failed to fetch poster data for ID ${id}`);
+            }
+        }
+    };
+    xhr.open('GET', `https://blog.zifeiyu.love/video/queryEpisode?id=${id}`);
+    xhr.send();
+}
+
 
 const post = document.getElementsByClassName('post')[0];
 const front = document.getElementsByClassName('front')[0];
@@ -48,7 +73,7 @@ function createposter(index) {
 
     //img
     let img = document.createElement('img');
-    img.setAttribute('src', PosterData[index]);
+    img.setAttribute('url', imgData[index]);
     img.classList.add('posters');
 
     poster.appendChild(img);
@@ -61,7 +86,7 @@ function createfronts(index)
     //front
     let fronts = document.createElement('img');
     fronts.classList.add('fronts');
-    fronts.setAttribute('src', FrontData[index]);
+    fronts.setAttribute('url', imgData[index]);
     front.appendChild(fronts);
 }
 
@@ -75,11 +100,13 @@ function ClearBrightness()
 }
 //初始化
 document.addEventListener("DOMContentLoaded", function(){
+    fetchPosterData(10);
+    fetchVideoData(10);
     for(let i = 0; i < 4; i++){
         createposter(i);
     };
     createfronts(0);
-    bg.style.background = "url('" + BgData[0] + "') no-repeat center center / cover";
+    bg.style.background = "url('" + vidData[0] + "') no-repeat center center / cover";
     let posters = document.getElementsByClassName('posters');
     posters[0].style.filter = "brightness(100%)";
     // prevbtn.style.display = "transparent";
@@ -116,7 +143,7 @@ function next() {
         createfronts(4);
         //reset filter
         let posters = document.getElementsByClassName('posters');
-        bg.style.background = "url(../image/5/bg.png) no-repeat center center / cover";
+        bg.style.background = `url(${imgData[4]}) no-repeat center center / cover`;
         posters[0].style.filter = "brightness(100%)";
         prevbtn.style.opacity = "1";
         nextbtn.style.opacity = "0";
@@ -154,7 +181,7 @@ function prev() {
         createfronts(0);
         //reset filter
         let posters = document.getElementsByClassName('posters');
-        bg.style.background = "url(../image/1/bg.png) no-repeat center center / cover";
+        bg.style.background = `url(${imgData[0]}) no-repeat center center / cover`;
         posters[0].style.filter = "brightness(100%)";
         prevbtn.style.opacity = "0";
         nextbtn.style.opacity = "1";
@@ -248,13 +275,13 @@ function setPosterBrightness() {
 
 // 设置DisplayFrame的背景图片
 function setBgImage() {
-    const bgImage = BgData[posterIndex];
+    const bgImage = vidData[posterIndex];
     document.querySelector('.DisplayFrame').style.backgroundImage = `url(${bgImage})`;
 }
 
 // 设置视频播放
 function setVideo() {
-    const videoSrc = Mp4Data[posterIndex];
+    const videoSrc = vidData[posterIndex];
     const video = document.getElementById('video');
     video.setAttribute('src', videoSrc);
     video.setAttribute('muted', true);
@@ -263,7 +290,7 @@ function setVideo() {
 }
 function setFronts(){
     const fronts = document.getElementsByClassName('fronts')[0];
-    fronts.setAttribute('src', FrontData[posterIndex]);
+    fronts.setAttribute('src', [posterIndex]);
 }
 
 // 切换poster

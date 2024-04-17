@@ -6,7 +6,9 @@ body, html {
     height: 100%;
     background-color: black;
 }
-
+.tool{
+    font-size: 22px !important;
+}
 .Header {
     position: fixed;
     top: 0;
@@ -162,8 +164,8 @@ body, html {
 {
     width: 300px;
     height: 50px;
-    border-bottom: grey 0.8px solid;
-    border-top: grey 0.8px solid;
+    /* border-bottom: grey 0.8px solid;
+    border-top: grey 0.8px solid; */
 }
 .interact
 {
@@ -171,13 +173,13 @@ body, html {
     flex-direction: row;
     align-items: center;
     justify-content: right;
-    transform: translateX(130%);
+    transform: translateX(500%);
 }
 .search:hover .hidden {
     display: block;
 }
 .search:hover .interact{
-    transform: translateX(40%);
+    transform: translateX(95%);
 }
 .search:hover input::placeholder{
     color: white;
@@ -190,6 +192,8 @@ body, html {
     justify-content: space-between;
     width: 400px;
     height: 50px;
+    border: 1px solid grey;
+    border-radius: 37px;
 }
 .left-radius
 {
@@ -223,6 +227,7 @@ input
     height: 50px;
     width: -webkit-fill-available;
     caret-color: white;
+    margin-left: 10px;
 }
 input:focus
 {
@@ -232,4 +237,14 @@ input:focus
 {
     color:rgb(152, 152, 152) ;
     font-size: 16px;
+}
+.icon-yonghu
+{
+    margin-right: 10px;
+}
+.logined
+{
+    background-image: url(../image/user.png);
+    width: 40px !important;
+    height: 40px;
 }

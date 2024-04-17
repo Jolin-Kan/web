@@ -84,8 +84,8 @@
     align-items: center;
     justify-content: space-between;
     position: absolute;
-    top: calc(100%); /* 距离上方的距离 */
-    left: 63%;
+    top: 64px; /* 距离上方的距离 */
+    left: 88%;
     transform: translateX(-50%);
     width: 400px;
     height: 400px;
@@ -93,7 +93,7 @@
     border-radius: 5%;
     z-index: 30;
 }
-.icon-yonghu:hover .tool6 {
+.hovertag:hover .tool6 {
     display: flex;
 }
 .title
